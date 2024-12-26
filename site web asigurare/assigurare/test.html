@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In/Sign Up Popup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f3f4f6;
+        }
+
+        .button-container {
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ddd;
+        }
+
+        #signInBtn {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        #signUpBtn {
+            background-color: #008cba;
+            color: white;
+        }
+
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+            z-index: 1000;
+            text-align: center;
+        }
+
+        .popup h2 {
+            margin: 0 0 10px;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+
+        .close-btn {
+            margin-top: 10px;
+            padding: 8px 15px;
+            background-color: red;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div class="button-container">
+    <button id="signInBtn">Sign In</button>
+    <button id="signUpBtn">Sign Up</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="popup" id="signInPopup">
+    <h2>Sign In</h2>
+    <input type="text" placeholder="Username" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+    <input type="password" placeholder="Password" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+    <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<div class="popup" id="signUpPopup">
+    <h2>Sign Up</h2>
+    <input type="text" placeholder="Username" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+    <input type="password" placeholder="Password" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+    <input type="email" placeholder="Email" style="width: 100%; margin-bottom: 10px; padding: 8px;">
+    <button class="close-btn" onclick="closePopup()">Close</button>
+</div>
+
+<script>
+    const signInBtn = document.getElementById('signInBtn');
+    const signUpBtn = document.getElementById('signUpBtn');
+    const signInPopup = document.getElementById('signInPopup');
+    const signUpPopup = document.getElementById('signUpPopup');
+    const overlay = document.getElementById('overlay');
+
+    function openPopup(popup) {
+        popup.style.display = 'block';
+        overlay.style.display = 'block';
+    }
+
+    function closePopup() {
+        signInPopup.style.display = 'none';
+        signUpPopup.style.display = 'none';
+        overlay.style.display = 'none';
+    }
+
+    signInBtn.addEventListener('click', () => openPopup(signInPopup));
+    signUpBtn.addEventListener('click', () => openPopup(signUpPopup));
+    overlay.addEventListener('click', closePopup);
+</script>
+
+</body>
+</html>

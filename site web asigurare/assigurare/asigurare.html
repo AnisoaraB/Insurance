@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asigurari</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+ <div>
+    <div class="bara-menu"> 
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+        <img class="general" src="data:image/png;base64,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" alt="Trulli" width="80" height="50">
+
+        
+        
+        <a id="ro" href="/">Ro</a>
+        <a id="ru" href="/ru/">Ru</a>
+        <button id="openPopup">Logare</button>
+        <button id="openPopup2">Registrare</button>
+<!-- popup pentru logare-->
+        <div class="popup-overlay" id="popupOverlay">
+          <div class="popup">
+            <button class="close-btn" id="closePopup">&times;</button>
+            <h2>Logare</h2>
+            <input type="text" placeholder="Enter your name" id="nameInput">
+            <input type="email" placeholder="Enter your email" id="emailInput">
+            <input type="password" placeholder="Enter your password" id="passwordInput">
+            <button id="submitRegistration">Mergi mai departe</button>
+          </div>
+        </div>
+<!-- popup pentru inregistrare-->
+        <div class="popup-overlay" id="registerPopupOverlay">
+            <div class="popup">
+                <button class="close-btn" id="closeRegisterPopup">&times;</button>
+                <h2>Inregistrare</h2>
+                <input type="text" placeholder="Enter your name" id="registerNameInput">
+                <input type="email" placeholder="Enter your email" id="registerEmailInput">
+                <input type="password" placeholder="Enter your password" id="registerPasswordInput">
+
+                <!-- Checkbox for agreeing to terms -->
+                <label>
+                    <input type="checkbox" id="termsCheckbox"> Sunt de acord cu termenii si conditiile
+                </label>
+                <button id="submitRegistration2" disabled>Mergi mai departe</button> <!-- Button initially disabled -->
+            </div>
+        </div>
+    </div>
+    </header>
+
+
+    <!--facem tip de asigurari-->
+    <div class="asigtip"> 
+
+        <h1>Asigurari online</h1>
+        <div class="rca">
+            <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95cc72313.png" alt="RCA"><br>
+            <span>RCA</span>
+            <ul>
+                <li>
+                    <a href="javascript:void(0);" onclick="openPopup3()">Obiectivul asigurarii</a>
+                </li>
+                <li>
+                    <a href="javascript:void(0);" onclick="openPopup4('popup4')">Riscuri si obligatii</a>
+                </li>
+            </ul>
+        </div>
+ 
+
+  <!-- Popup3 obiectivul asigurarii -->
+<div id="popup3" class="popup3">
+    <div class="popup-content3">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95cc72313.png" alt="RCA" class="popup-image">
+        <p>Asigurarea RCA oferă protecție pentru eventualele prejudicii cauzate de asigurat terțelor persoane prin accidente de autovehicule pe teritoriul Republicii Moldova, și anume:
+
+            deces sau vătămări corporale;
+            avarii sau distrugeri ale unor bunuri (inclusiv autovehicule).</p>
+        <button onclick="closePopup3()">Închide</button>
+    </div>
+</div>
+
+<!-- Popup pentru Riscuri și obligațiuni -->
+<div id="popup4" class="popup4">
+    <div class="popup-content4">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95cc72313.png" alt="RCA" class="popup-image4">
+        <p>Deces sau vătămări corporale; avarii sau distrugeri ale unor bunuri (inclusiv autovehicule),
+             cauzate de asigurat terțelor persoane prin accidente de autovehicule pe teritoriul Republicii Moldova</p>
+        <button onclick="closePopup4('popup4')">Închide</button>
+    </div>
+</div>
+
+<div class="carte-verde">
+    <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95be9263c.png" alt="carte-verde"><br>
+    <span>Carte Verde</span>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup5()">Obiectivul asigurarii</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup6('popup6')">Riscuri si obligatii</a>
+        </li>
+    </ul>
+</div>
+<div id="popup5" class="popup5">
+    <div class="popup-content5">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95be9263c.png" alt="carte-verde" class="popup-image5">
+        <p>Prin asigurarea „Carte Verde” sunt protejate interesele terțelor persoane pentru pagubele produse vieții, 
+            sănătății și bunurilor lor în urma accidentelor rutiere, 
+            care au avut loc în afara hotarelor Republicii Moldova (pe teritoriul țărilor membre ale sistemului „Carte Verde”).</p>
+        <button onclick="closePopup5()">Închide</button>
+    </div>
+</div>
+<!-- Popup pentru Riscuri și obligațiuni -->
+<div id="popup6" class="popup6">
+    <div class="popup-content6">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95be9263c.png" alt="carte-verde" class="popup-image6">
+        <p>Se acordă despăgubiri pentru prejudiciile provocate prin accidente de vehicule produse 
+            în limitele teritoriale de acoperire, în conformitate cu legislaţia în vigoare din 
+            statul pe teritoriul căruia s-a produs accidentul.<br>
+
+            Despăgubirile se acordă pentru pagube materiale, cheltuieli de judecată efectuate de către persoana prejudiciată şi
+             vătămări corporale sau deces, inclusiv pentru prejudicii fără caracter patrimonial.</p>
+        <button onclick="closePopup6('popup6')">Închide</button>
+    </div>
+</div>
+
+<div class="casco">
+    <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95d98b426.png" alt="casco"><br>
+    <span>Casco</span>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup7()">Obiectivul asigurarii</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup8('popup8')">Riscuri si obligatii</a>
+        </li>
+    </ul>
+</div>
+<div id="popup7" class="popup7">
+    <div class="popup-content7">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95d98b426.png" alt="casco" class="popup-image7">
+        <p>utovehicule înmatriculate în Republica Moldova, care aparţin persoanelor fizice şi juridice
+            Echipamentul suplimentar, care nu intră în dotarea autovehiculului conform listei de dotări ale uzinei producătoare
+            Conducătorul auto şi pasagerii, pentru cazuri de accidente care pot avea loc în timpul accidentelor rutiere.</p>
+        <button onclick="closePopup7()">Închide</button>
+    </div>
+</div>
+<div id="popup8" class="popup8">
+    <div class="popup-content8">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95d98b426.png" alt="casco" class="popup-image8">
+        <p>- "DAUNE" - prejudiciile materiale cauzate Asiguratului prin deteriorarea sau distrugerea autovehiculului şi a echipamentului suplimentar ca urmare a:<br>
+
+            a. tamponării, lovirii sau ciocnirii cu un alt autovehicul, obiect; trecerii peste orice fel de obiecte statice sau în mişcare; căderii; căderii pe autovehicul a unor obiecte străine; derapării; răsturnării; alunecării;<br>
+            
+            b. incendiului, descărcării electrice, exploziei, ploii torenţiale, grindinei, inundaţiei, uraganului, cutremurului de pămînt, surpărilor, alunecărilor de teren, căderilor abundente de zăpadă, avalanşelor, inclusiv acţiunea directă sau indirectă a acestora;<br>
+            
+            - „FURT” – furtul, jaful, tîlhăria, răpirea autovehicului, a părţilor componente sau pieselor acestuia; orice daune cauzate ca urmare a furtului, jafului, tîlhăriei, răpirei sau tentativei de furt, jaf, tîlharie, răpire a autovehicului, a părţilor lui componente şi a pieselor, echipamentului primit în asigurare, precum şi a echipamentului suplimentar şi accesoriilor dacă acestea sunt asigurate conform contractului de asigurare.<br>
+            
+            -„ACCIDENT” – cauzarea leziunilor corporale sau decesul conducătorului auto/pasagerilor ca rezultat al unui accident rutier.
+            
+            "AUTOCASCO" - pachetul complet de riscuri, compus din grupurile de risc "DAUNĂ" şi "FURT", care poate include suplimentar riscul "ACCIDENT". .</p>
+        <button onclick="closePopup8('popup8')">Închide</button>
+    </div>
+</div>
+</div>
+
+<script src="javascript.js"></script>
+</body>
+</html>

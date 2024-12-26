@@ -1,0 +1,2 @@
+# assigurare
+acest site final

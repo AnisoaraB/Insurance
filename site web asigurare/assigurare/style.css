@@ -27,32 +27,43 @@
   .active {
     background-color: #ec2233;
   }
-  #ro,#ru{
-    color: white;
-    text-decoration: none;
-    margin-bottom: 15px;
+ 
+  #openPopup, #openPopup2 {
     background-color: #f44336;
     color: white;
-    padding: 15px 14px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-  }
- #openPopup,#openPopup2{
-    background-color: #f44336;;
-    color: white;
-    padding: 15px 10px;
+    padding: 10px 15px; /* Ajustare padding pentru mobil */
     margin: 8px 8px;
     border: none;
     cursor: pointer;
-    width: 10%;
+    width: 45%; /* Dimensiune flexibilă */
+    max-width: 120px; /* Limitează lățimea maximă */
+    text-align: center;
+    border-radius: 5px; /* Adaugă colțuri rotunjite */
     opacity: 0.9;
     display: inline-block;
-    float: right;
+    float: none; /* Eliminăm float pentru o mai bună gestionare pe mobil */
     z-index: 9999;
-  
-    
-  }
+}
+
+/* Media query pentru ecrane mici */
+@media (max-width: 768px) {
+    #openPopup, #openPopup2 {
+        width: 45%; /* Butoanele ocupă fiecare aproximativ jumătate din lățime */
+        margin: 8px auto; /* Centrare pe mobil */
+        display: block; /* Stivuire verticală */
+        font-size: 14px; /* Dimensiune mai mică a textului */
+    }
+}
+
+/* Media query pentru ecrane foarte mici */
+@media (max-width: 480px) {
+    #openPopup, #openPopup2 {
+        width: 80%; /* Butoanele sunt mai late pe ecrane mici */
+        padding: 12px; /* Spațiu ușor mai mare pentru butoane */
+        font-size: 16px; /* Text mai mare pentru lizibilitate */
+    }
+}
+
   
   button:hover {
     opacity:1;
@@ -414,3 +425,328 @@ button:hover {
       align-items: flex-start;
   }
 }
+.hidden-content2 {
+  display: none; /* Ascunde secțiunea implicit */
+}
+.contact-details {
+  font-family: Arial, sans-serif;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 20px;
+}
+
+.contact-lists {
+  display: flex;
+  flex-wrap: wrap; /* Permite listele să se împacheteze pe rânduri noi */
+  gap: 20px; /* Spațiere între coloane */
+  justify-content: space-between; /* Spațiere între coloane */
+}
+
+.contact-info {
+  list-style: none; /* Elimină bulinele */
+  padding: 0;
+  margin: 0;
+  flex: 1 1 calc(50% - 20px); /* Coloane flexibile: 2 pe rând, reduc spațiul */
+  min-width: 250px; /* Dimensiune minimă pentru fiecare coloană */
+  max-width: 400px; /* Dimensiune maximă pentru fiecare coloană */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Adaugă o umbră subtile */
+  padding: 10px; /* Spațiere internă */
+  border-radius: 5px; /* Colțuri rotunjite */
+  background-color: #f9f9f9; /* Fundal deschis */
+}
+
+.contact-info li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px; /* Spațiere între elemente */
+}
+
+.contact-info figure {
+  margin: 0 10px 0 0; /* Spațiere între imagine și text */
+  width: 24px; /* Dimensiune fixă pentru imagine */
+}
+
+.contact-info img {
+  max-width: 100%;
+  height: auto;
+}
+
+.download-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  margin-top: 20px;
+  background-color: #ec2233;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.download-btn:hover {
+  background-color: #ec2233;
+}
+
+@media (max-width: 768px) {
+  .contact-info {
+      flex: 1 1 100%; /* Listele ocupă lățimea completă pe ecrane mici */
+  }
+}
+
+#address-selector {
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 20px;
+  display: flex; /* Afișează elementele într-un rând */
+  justify-content: space-between; /* Adaugă spațiu între elemente */
+  gap: 20px; /* Spațiu între #address-selector și #working-hours */
+}
+
+.checkbox-scroll {
+  max-height: 50px; /* Înălțime maximă pentru scroll */
+  overflow-y: auto; /* Activează scroll-ul */
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+  flex: 1; /* Permite div-ului să ocupe lățimea rămasă */
+}
+
+.address-item {
+  display: flex; /* Afișare pe același rând */
+  align-items: center; /* Aliniere verticală la mijloc */
+  margin-bottom: 10px; /* Spațiere între elemente */
+  cursor: pointer;
+}
+
+.address-item input[type="checkbox"] {
+  margin-right: 10px; /* Spațiere între checkbox și text */
+}
+
+.address-item span {
+  flex: 1; /* Se extinde pe restul lățimii disponibile */
+}
+
+#working-hours {
+  flex: 0 0 250px; /* Alocă o lățime fixă pentru working hours */
+  padding: 10px;
+  border: 1px solid #ee8291;
+  border-radius: 5px;
+  background-color: #ee7e83;
+  width: 250px; /* Lățimea fixă pentru div-ul de ore */
+}
+
+#hours-text {
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  #address-selector {
+      flex-direction: column; /* Pe dispozitive mici, elementele se vor aranja vertical */
+  }
+
+  #working-hours {
+      width: 100%; /* Pe ecrane mici, working hours va ocupa întreaga lățime */
+      margin-top: 20px;
+  }
+
+  .address-item {
+      flex-direction: column; /* Pe ecrane mici, adresa și checkbox-ul se aliniază vertical */
+      align-items: flex-start;
+  }
+
+  .address-item input[type="checkbox"] {
+      margin-bottom: 5px; /* Spațiere între checkbox și text pe verticală */
+  }
+}
+.hidden-content3 {
+  display: none; /* Ascunde secțiunea implicit */
+}
+
+#about-content {
+  margin: 20px;
+}
+
+#about-content a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+  margin-right: 20px;
+  padding: 5px;
+  transition: color 0.3s ease;
+size: 25px;
+}
+
+
+
+
+#about-content div {
+  margin-bottom: 30px;
+}
+
+#about-content section {
+  padding: 50px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+
+
+        /* Stiluri generale pentru footer */
+        .footer {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          background-color: #691b1b;
+          padding: 10px 20px;
+          position: static;
+          bottom: 0;
+          width: 100%;
+          height: auto; /* Permite footer-ului să se adapteze la conținut */
+          z-index: 1000;
+          flex-wrap: wrap; /* Permite conținutului să se plieze pe ecrane mici */
+      }
+      
+      /* Stilizare pentru fiecare secțiune din footer */
+      .footer > div {
+          flex: 1 1 calc(33% - 20px); /* 33% din lățimea, cu spațiu între secțiuni */
+          padding: 10px;
+          min-width: 280px; /* Lățimea minimă pentru fiecare secțiune */
+      }
+      
+      /* Stilizare pentru titluri din footer */
+      .footer h1 {
+          color: white;
+          font-size: 1.2em; /* Mărime font mai mare pentru titluri */
+          margin-bottom: 10px;
+      }
+      
+      /* Stilizare pentru linkuri din footer */
+      .footer a {
+          color: white;
+          text-decoration: none;
+          display: block;
+          margin-bottom: 5px;
+          font-size: 1em; /* Dimensiune standard pentru linkuri */
+      }
+      
+      /* Imagini din footer */
+      .footer img {
+          max-width: 20px; /* Dimensiune imagini pentru vizibilitate */
+          margin-right: 10px;
+          vertical-align: middle;
+      }
+      
+      /* Popup pentru comanda apelului */
+      .popupfooter {
+      
+          display: none;
+         position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+      }
+      #closePopupfooter{
+        cursor: pointer;
+      }
+      /* Conținutul popup-ului */
+      .popup-contentfooter {
+          background-color: white;
+          padding: 20px;
+          border-radius: 5px;
+          width: 60%;
+          max-width: 90%; /* Maximează la 90% din lățimea ferestrei */
+         height: 55%;
+          
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+          display: flex;
+          flex-direction: column;
+          /* Prevents overflow issues on smaller screens */
+        }
+        .popup-contentfooter input,
+.popup-contentfooter textarea {
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+      
+      
+      /* Poziționare și stilizare buton Viber */
+      #viberCallBtn {
+          position: fixed;
+          bottom: 20px;
+          left: 80%; /* Plasează butonul la jumătatea paginii */
+          transform: translateX(-50%); /* Ajustează poziția pentru a-l centra perfect */
+          background-color: red;
+          color: white;
+          font-size: 16px;
+          font-weight: bold;
+          padding: 12px 24px;
+          border: none;
+          border-radius: 50px;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.3s ease;
+      }
+      
+      /* Hover și focus pentru butonul Viber */
+      #viberCallBtn:hover {
+          background-color: darkred; /* Culoare mai închisă la hover */
+          transform: scale(1.05); /* Efect de mărire la hover */
+      }
+      
+      #viberCallBtn:focus {
+          outline: none;
+          box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2);
+      }
+      .callForm l{
+        display: flex;
+      }
+      
+      /* Media query pentru ecrane mici (ex. telefoane) */
+      @media (max-width: 768px) {
+          .footer {
+              height: auto; /* Permite footer-ului să se adapteze la conținut pe ecrane mici */
+              padding: 15px; /* Crește padding-ul pentru a crea mai mult spațiu */
+              position: static; /* Fixează footer-ul în partea de jos pe ecrane mici */
+          }
+      
+          /* Stiluri pentru secțiuni în footer */
+          .footer > div {
+              flex: 1 1 100%; /* Fiecare secțiune va ocupa întreaga lățime pe ecrane mici */
+              min-width: 100%; /* Fiecare secțiune va fi de 100% din lățimea containerului */
+              padding: 10px 0;
+          }
+      
+          /* Buton Viber pe ecrane mici */
+          #viberCallBtn {
+              left: 80%; /* Centrat pe ecrane mici */
+              bottom: 10px; /* Ușor mai sus pentru a nu ajunge prea aproape de marginea de jos */
+          }
+      }
+      
+      /* Media query pentru tablete */
+      @media (max-width: 1024px) {
+          .footer {
+              height: auto; /* Permite footer-ului să se ajusteze automat pe tablete */
+          }
+      
+          /* Stiluri pentru secțiuni în footer */
+          .footer > div {
+              flex: 1 1 calc(50% - 20px); /* 50% din lățimea pe ecrane de tablete */
+          }
+      }
+      
+      

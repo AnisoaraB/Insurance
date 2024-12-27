@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina cu Div Dinamic</title>
+    <style>
+        /* Stiluri pentru meniul de navigare */
+        .bara-menu ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            background-color: #333;
+        }
+
+        .bara-menu ul li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+
+        .bara-menu ul li a {
+            text-decoration: none;
+            color: white;
+            padding: 10px;
+            font-size: 16px;
+            display: inline-block;
+        }
+
+        .bara-menu ul li a.active {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        /* Div-ul ascuns */
+        .hidden-content {
+            display: none;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+        }
+
+        .visible-content {
+            display: block;
+            padding: 20px;
+            background-color: #e9e9e9;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Meniul -->
+    <div class="bara-menu">
+        <ul>
+            <li><a class="active" href="#home" onclick="loadContent('home')">Home</a></li>
+            <li><a href="#news" onclick="showDiv('news-content')">News</a></li>
+            <li><a href="#contact" onclick="loadContent('contact')">Contact</a></li>
+            <li><a href="#about" onclick="loadContent('about')">About</a></li>
+        </ul>
+    </div>
+
+    <!-- Conținutul principal -->
+    <div id="content">
+        <h2>Bine ai venit pe pagina principală!</h2>
+        <p>Aici vei găsi informații utile și noutăți despre asigurările online.</p>
+    </div>
+
+    <!-- Div-ul care va fi afișat când se apasă pe News -->
+    <div id="news-content" class="hidden-content">
+        <h3>Ultimele Noutăți</h3>
+        <p>Vezi aici cele mai recente articole despre asigurări.</p>
+    </div>
+
+    <!-- Scriptul JavaScript -->
+    <script>
+        // Funcția care va schimba conținutul în div-ul #content
+        function loadContent(section) {
+            let contentDiv = document.getElementById('content');
+            let menuItems = document.querySelectorAll('.bara-menu ul li a');
+
+            // Resetarea stilului active pentru toate link-urile
+            menuItems.forEach(item => item.classList.remove('active'));
+
+            // Seteaza stilul activ pentru link-ul selectat
+            document.querySelector(`a[href='#${section}']`).classList.add('active');
+
+            // Ascunde ultimele noutăți atunci când este apăsat pe Home sau About
+            let newsContent = document.getElementById('news-content');
+            if (section === 'home' || section === 'about') {
+                newsContent.classList.remove('visible-content');
+                newsContent.classList.add('hidden-content');
+            }
+
+            // Schimbă conținutul pentru fiecare secțiune
+            if (section === 'home') {
+                contentDiv.innerHTML = '<h2>Bine ai venit pe pagina principală!</h2><p>Aici vei găsi informații utile și noutăți despre asigurările online.</p>';
+            } else if (section === 'contact') {
+                contentDiv.innerHTML = '<h2>Acesta este Contact</h2><p>Aici poți contacta echipa noastră pentru orice întrebare.</p>';
+            } else if (section === 'about') {
+                contentDiv.innerHTML = '<h2>Acesta este About</h2><p>Află mai multe despre compania noastră și misiunea noastră de a oferi asigurări de calitate.</p>';
+            }
+        }
+
+        // Funcția pentru a deschide un div specific (de exemplu, #news-content)
+        function showDiv(divId) {
+            let targetDiv = document.getElementById(divId);
+            targetDiv.classList.remove('hidden-content');  // Se face vizibil
+            targetDiv.classList.add('visible-content');   // Aplică stilul vizibil
+
+            // Dacă vrei ca doar acest div să fie vizibil și celelalte să fie ascunse
+            let allDivs = document.querySelectorAll('.hidden-content');
+            allDivs.forEach(div => {
+                if (div.id !== divId) {
+                    div.classList.remove('visible-content');
+                    div.classList.add('hidden-content');
+                }
+            });
+        }
+    </script>
+
+</body>
+</html>

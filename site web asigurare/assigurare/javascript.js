@@ -128,3 +128,62 @@ function openPopup8(popupId8) {
 function closePopup8(popupId8) {
     document.getElementById(popupId8).style.display = "none";
 }
+function openPopup9() {
+    document.getElementById("popup9").style.display = "flex";
+}
+
+function closePopup9() {
+    document.getElementById("popup9").style.display = "none";
+}
+function openPopup10(popupId10) {
+    document.getElementById(popupId10).style.display = "flex";
+}
+
+function closePopup10(popupId10) {
+    document.getElementById(popupId10).style.display = "none";
+}
+function openPopup11() {
+    document.getElementById("popup11").style.display = "flex";
+}
+
+function closePopup11() {
+    document.getElementById("popup11").style.display = "none";
+}
+function openPopup12(popupId12) {
+    document.getElementById(popupId12).style.display = "flex";
+}
+
+function closePopup12(popupId12) {
+    document.getElementById(popupId12).style.display = "none";
+}
+
+
+function loadContent(page) {
+    // Ascunde toate secțiunile de conținut la început
+    const allContents = document.querySelectorAll('.hidden-content');
+    allContents.forEach(function(content) {
+        content.style.display = 'none';
+    });
+
+    // Ascunde div-ul cu clasa 'asigtip' atunci când se accesează secțiunile News, Contact, About
+    if (page === 'news' || page === 'contact' || page === 'about') {
+        document.querySelector('.asigtip').style.display = 'none';
+    } else {
+        // Resetează stilul display la valoarea implicită (de obicei, bloc)
+        document.querySelector('.asigtip').style.display = ''; // Elimină orice stil inline adăugat
+    }
+    
+    // Afișează div-ul corespunzător pentru pagina selectată
+    if (page === 'news') {
+        document.querySelector('#news-content').style.display = 'block'; // Arată secțiunea de News
+    }
+
+    console.log("Loading content for: " + page);
+
+if (page === 'contact') {
+    document.querySelector('#contact-content').style.display = 'block'; // Arată secțiunea de News
+}
+
+console.log("Loading content for: " + page);
+
+}

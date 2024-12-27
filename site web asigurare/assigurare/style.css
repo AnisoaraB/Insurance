@@ -138,148 +138,6 @@
     float: right;
 }
 
-
-.rca{
-    list-style-type: none;
-  
-    padding: 20px;
-    overflow: hidden;
-    background-color: #a1e78f;
-    display: block;
-    text-align: center;
-    width: 15%;
-    border-radius: 5px;
-    opacity: 0.8;
-}
-.rca ul{
-    float: right;
-    list-style-type: square;
-    lighting-color: #ec2233;
-    font-size: 20px;
-}
-.rca span{
-    font-weight:bold;
-    margin-top: 20px;
-    font-size: 23px;
-    float: left;
-}
-
-.popup3 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.popup-content3 {
-    background-color: white;
-    width: 50%;
-    height: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ec2233;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color:#ec2233;
-}
-
-
-/* stil pop up 4*/
-.popup4 {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.popup-content4 {
-    background-color: white;
-    width: 50%;
-    height: 50%;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-size: 23px;
-}
-
-.popup-image4 {
-    max-width: 80%;
-    max-height: 50%;
-    margin-bottom: 20px;
-    border-radius: 5px;
-}
-
-button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    background-color: #ec2233;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #ec2233;
-}
-.carte-verde{
-    list-style-type: none;
-  
-    padding: 20px;
-    overflow: hidden;
-    background-color: #7e6688;
-    display: block;
-    text-align: center;
-    width: 15%;
-    border-radius: 5px;
-    opacity: 0.8;
-}
-.carte-verde ul{
-    float: right;
-    list-style-type: square;
-    lighting-color: #ec2233;
-    font-size: 20px;
-}
-.carte-verde span{
-    font-weight:bold;
-    margin-top: 20px;
-    font-size: 23px;
-    float: left;
-}
 .asigtip {
     display: flex;
     flex-wrap: wrap; /* Permite împachetarea dacă spațiul e insuficient */
@@ -295,223 +153,264 @@ button:hover {
     margin-bottom: 20px; /* Spațiu între titlu și secțiuni */
 }
 
+
+
+/* General popup styling */
+.popup3,.popup4,.popup5,.popup6,.popup7,.popup8,.popup9, .popup10, .popup11, .popup12 {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-content3,.popup-content4,.popup-content5,.popup-content6,.popup-content7,.popup-content8,.popup-content9, .popup-content10, .popup-content11, .popup-content12 {
+  background-color: white;
+  width: 80%;  /* Changed from 50% to 80% to fit better on mobile */
+  height: 70%;  /* Changed from 55% to 70% for better content visibility */
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;  /* Reduced font-size for mobile */
+  overflow-y: auto; /* Prevents overflow issues on smaller screens */
+}
+
+.popup-image3,.popup-image4,.popup-image5,.popup-image6,.popup-image7,.popup-image8,.popup-image9.popup-image9, .popup-image10, .popup-image11, .popup-image12 {
+  max-width: 80%;
+  max-height: 50%;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+button {
+  margin-top: 2%;
+  padding: 10px 20px;
+  background-color: #ec2233;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;  /* Reduced button font-size for mobile */
+}
+
+button:hover {
+  background-color: #ec2233;
+}
+
+/* Responsive adjustments for smaller screens */
+@media screen and (max-width: 768px) {
+  .popup-content3,.popup-content4,.popup-content5,.popup-content6,.popup-content7,.popup-content8,.popup-content9, .popup-content10, .popup-content11, .popup-content12 {
+    width: 90%;  /* Increased to take up more space */
+    height: auto; /* Allow height to adjust based on content */
+    font-size: 18px;  /* Further reduced font-size for mobile */
+  }
+
+  popup-image3,.popup-image4,.popup-image5,.popup-image6,.popup-image7,.popup-image8,.popup-image9, .popup-image10, .popup-image11, .popup-image12 {
+    max-width: 90%;  /* Increased image size on small screens */
+  }
+
+  button {
+    padding: 8px 16px;  /* Smaller padding on mobile */
+    font-size: 14px;  /* Further reduced button font-size */
+  }
+}
+
+/* For very small screens (e.g., mobile phones) */
+@media screen and (max-width: 480px) {
+  .popup-content3,.popup-content4,.popup-content5,.popup-content6,.popup-content7,.popup-content8, .popup-content9, .popup-content10, .popup-content11, .popup-content12 {
+    width: 95%;  /* Make the popup take up more space */
+    height: auto; /* Allow height to adjust */
+    font-size: 16px;  /* Smaller font-size for very small screens */
+  }
+
+  popup-image3,.popup-image4,.popup-image5,.popup-image6,.popup-image7,.popup-image8,.popup-image9, .popup-image10, .popup-image11, .popup-image12 {
+    max-width: 95%;  /* Image size increases for better visibility */
+  }
+
+  button {
+    padding: 6px 12px;  /* Even smaller padding for mobile */
+    font-size: 14px;  /* Smaller font-size */
+  }
+}
+
+/* Stiluri generale pentru div-urile "medicala" și "accidente" */
+.medicala, .accidente,.rca,.carte-verde,.casco {
+  list-style-type: none;
+  padding: 20px;
+  overflow: hidden;
+  display: block;
+  text-align: center;
+  width: 15%;
+  border-radius: 5px;
+  opacity: 0.8;
+  margin: auto; /* Centrare pe ecran */
+}
+
+/* Culori pentru fiecare secțiune */
+.medicala {
+  background-color: #be6dec;
+}
+
+.accidente {
+  background-color: #eed64b;
+}
+.rca{
+  background-color: rgb(196, 241, 192);
+}
+.carte-verde{
+  background-color: plum;
+}
 .casco{
-    list-style-type: none;
-  
-    padding: 20px;
-    overflow: hidden;
-    background-color: #ec82aa;
-    display: block;
-    text-align: center;
-    width: 15%;
-    border-radius: 5px;
-    opacity: 0.8;
-}
-.casco ul{
-    float: right;
-    list-style-type: square;
-    lighting-color: #ec2233;
-    font-size: 20px;
-}
-.casco span{
-    font-weight:bold;
-    margin-top: 20px;
-    font-size: 23px;
-    float: left;
-}
-/* css popup 5 */
-.popup5 {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+  background-color: pink;
 }
 
-.popup-content5 {
-  background-color: white;
-  width: 50%;
-  height: 50%;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
-}
-
-.popup-image5 {
-  max-width: 80%;
-  max-height: 50%;
-  margin-bottom: 20px;
-  border-radius: 5px;
-}
-
-button {
+/* Text și stiluri generale */
+.medicala span, .accidente span, .rca span, .carte-verde span, .casco span {
+  font-weight: bold;
   margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #ec2233;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #ec2233;
-}
-/* css popup 6 */
-.popup6 {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
-}
-
-.popup-content6 {
-  background-color: white;
-  width: 50%;
-  height: 55%;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   font-size: 23px;
+  float: left;
 }
 
-.popup-image6 {
-  max-width: 80%;
-  max-height: 50%;
-  margin-bottom: 20px;
-  border-radius: 5px;
+.medicala ul, .accidente ul, .rca ul, .carte-verde ul, .casco ul {
+  float: right;
+  list-style-type: square;
+  font-size: 20px;
 }
 
-button {
-  margin-top: 2%;
-  padding: 10px 20px;
-  background-color: #ec2233;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+/* Stiluri responsive pentru ecrane mai mici */
+@media (max-width: 768px) {
+  .medicala, .accidente, .rca,.carte-verde,.casco {
+    width: 90%; /* Ajustează lățimea pentru a ocupa mai mult spațiu pe ecran */
+    padding: 15px; /* Reduce padding-ul */
+  }
+
+  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span  {
+    font-size: 18px; /* Micșorează font-ul */
+    float: none; /* Elimină flotarea pentru un layout mai simplu */
+    display: block; /* Asigură afișarea verticală */
+    text-align: center; /* Centrează textul */
+  }
+
+  .medicala ul, .accidente ul,.rca ul, .carte-verde ul, .casco ul {
+    float: none; /* Elimină flotarea */
+    list-style-type: none; /* Ascunde punctele listei */
+    padding: 0; /* Elimină padding-ul */
+    text-align: center; /* Centrează lista */
+  }
+
+  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li {
+    margin: 5px 0; /* Adaugă spațiu între elementele listei */
+    font-size: 16px; /* Reduce font-ul listei */
+  }
 }
 
-button:hover {
-  background-color: #ec2233;
-}
-/* css popup 7 */
-.popup7 {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+/* Stiluri responsive pentru ecrane foarte mici */
+@media (max-width: 480px) {
+  .medicala, .accidente,.rca,.carte-verde,.casco{
+    padding: 10px;
+  }
+
+  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span  {
+    font-size: 16px;
+  }
+
+  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li {
+    font-size: 14px;
+  }
 }
 
-.popup-content7 {
-  background-color: white;
-  width: 50%;
-  height: 55%;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+/* Stil pentru secțiunea de News */
+#news-content {
+  display: none; /* Ascunde de la început */
+  
+  margin-top: 100px; /* Adaugă un spațiu între meniu și conținut */
+  
+ 
+}
+
+/* Stil pentru titlu și paragraf în News */
+#news-content h3 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+#news-content p {
+  color: #666;
+  font-size: 16px;
+  line-height: 1.6;
+}
+#news-content {
+  margin: 20px;
+}
+
+#news-content {
+  margin: 20px;
+}
+
+.newsdiv {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
-.popup-image7 {
-  max-width: 80%;
-  max-height: 50%;
-  margin-bottom: 20px;
-  border-radius: 5px;
+.newsdiv > div {
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  background-color: #f4f4f4; /* Background pentru fiecare div */
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-button {
-  margin-top: 2%;
-  padding: 10px 20px;
-  background-color: #ec2233;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
+.newsdiv img {
+  width: 100%;   /* Imaginile vor ocupa întreaga lățime a containerului */
+  height: 200px; /* Dimensiunea fixă pentru înălțimea imaginii */
+  object-fit: cover; /* Asigură că imaginea se ajustează corect fără a distorsiona */
+  border-radius: 8px;
 }
 
-button:hover {
-  background-color: #ec2233;
-}
-/* css popup 8 */
-.popup8 {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  justify-content: center;
-  align-items: center;
-  z-index: 9999;
+.newsdiv strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 1.2em;
+  color: #333;
 }
 
-.popup-content8 {
-  background-color: white;
-  width: 50%;
-  height: 90%;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  font-size: 23px;
+.newsdiv pre {
+  font-size: 0.9em;
+  color: #666;
 }
 
-.popup-image8 {
-  max-width: 80%;
-  max-height: 50%;
-  margin-bottom: 20px;
-  border-radius: 5px;
+.newsdiv a {
+  text-decoration: none;
+  color: #0066cc;
+  font-weight: bold;
+  margin-top: 10px;
+  display: inline-block;
 }
 
-button {
-  margin-top: 2%;
-  padding: 10px 20px;
-  background-color: #ec2233;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
+/* Responsivitate pentru mobil */
+@media (max-width: 768px) {
+  .newsdiv > div {
+      width: 100%;
+  }
 
-button:hover {
-  background-color: #ec2233;
+  .newsdiv {
+      flex-direction: column;
+      align-items: flex-start;
+  }
 }

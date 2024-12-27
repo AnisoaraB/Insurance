@@ -9,22 +9,23 @@
 </head>
 <body>
     <header>
+        
  <div>
     <div class="bara-menu"> 
-    <ul>
-        <li><a class="active" href="#home">Home</a></li>
-        <li><a href="#news">News</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+        <ul>
+            <li><a class="active" href="#home" onclick="loadContent('home')">Home</a></li>
+            <li><a href="#news" onclick="loadContent('news')">News</a></li>
+            <li><a href="#contact" onclick="loadContent('contact')">Contact</a></li>
+            <li><a href="#about" onclick="loadContent('about')">About</a></li>
+        </ul>
         <img class="general" src="data:image/png;base64,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" alt="Trulli" width="80" height="50">
 
         
         
-        <a id="ro" href="/">Ro</a>
-        <a id="ru" href="/ru/">Ru</a>
+       
         <button id="openPopup">Logare</button>
         <button id="openPopup2">Registrare</button>
+        
 <!-- popup pentru logare-->
         <div class="popup-overlay" id="popupOverlay">
           <div class="popup">
@@ -54,8 +55,38 @@
         </div>
     </div>
     </header>
-
-
+    <div>
+    <div id="news-content" class="hidden-content">
+        <h3>Ultimele Noutăți</h3>
+        <p>Vezi aici cele mai recente articole despre asigurări.</p>
+        <div class="newsdiv">
+            <div>
+            <img src="https://asterra.md/uploads/news/thumbs/version_153/621df24e1ed04.jpeg">
+            <strong>Circulara 01/2022: Asigurare de raspundere civila auto реntru vehicule cu numеrе de inmatriculare din strainatаtе</strong>
+            <pre>01 Martie,2022</pre>
+            <a href="https://asterra.md/noutati/circulara-012022-asigurare-de-rdspupdere-civila-auto-reptru-vehicule-cu-numere-de-inmatriculare-din-straipatate/">Citeste mai mult</a>
+        </div>
+        <div>
+            <img src="https://asterra.md/uploads/news/thumbs/version_153/5ddf937292c8b.jpg">
+            <strong> Ce este Constatul amiabil?</strong>
+            <pre>28 Noiembrie,2019</pre>
+            <a href="https://asterra.md/noutati/circulara-012022-asigurare-de-rdspupdere-civila-auto-reptru-vehicule-cu-numere-de-inmatriculare-din-straipatate/">Citeste mai mult</a>
+        </div>
+        <div>
+            <img src="https://asterra.md/uploads/news/thumbs/version_153/5d48b0d030bea.jpg">
+            <strong> Cât costă, de care riscuri și cum să - ți asiguri locuința?</strong>
+            <pre>01Februarie,2019</pre>
+            <a href="https://asterra.md/noutati/circulara-012022-asigurare-de-rdspupdere-civila-auto-reptru-vehicule-cu-numere-de-inmatriculare-din-straipatate/">Citeste mai mult</a>
+        </div>
+    </div>
+    </div>
+    <div id="contact-content" class="hidden-content">
+    <div>
+        <span>Contacte</span>
+        <span>IDNO: 1006600032750</span>
+    </div>
+</div>
+</div>
     <!--facem tip de asigurari-->
     <div class="asigtip"> 
 
@@ -146,7 +177,7 @@
 <div id="popup7" class="popup7">
     <div class="popup-content7">
         <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95d98b426.png" alt="casco" class="popup-image7">
-        <p>utovehicule înmatriculate în Republica Moldova, care aparţin persoanelor fizice şi juridice
+        <p>Autovehicule înmatriculate în Republica Moldova, care aparţin persoanelor fizice şi juridice
             Echipamentul suplimentar, care nu intră în dotarea autovehiculului conform listei de dotări ale uzinei producătoare
             Conducătorul auto şi pasagerii, pentru cazuri de accidente care pot avea loc în timpul accidentelor rutiere.</p>
         <button onclick="closePopup7()">Închide</button>
@@ -169,8 +200,87 @@
         <button onclick="closePopup8('popup8')">Închide</button>
     </div>
 </div>
+
+
+
+<div class="medicala">
+    <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95e34345a.png" alt="medicala"><br>
+    <span>Medicala</span>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup9()">Obiectivul asigurarii</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup10('popup10')">Riscuri si obligatii</a>
+        </li>
+    </ul>
+</div>
+<div id="popup9" class="popup9">
+    <div class="popup-content9">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95e34345a.png" alt="medicala" class="popup-image9">
+        <p>Obiectul asigurării benevole a sănătății îl constituie interesul patrimonial al persoanei asigurate, care la survenirea cazului asigurat, prevede achitarea de către Asigurator a cheltuielilor legate de asistență medicală prestata acesteia conform Contractului de asigurare.
+<br>
+            Persoanele asigurate pot fi cetațenii Republicii Moldova și cetațeni straini de orice varsta.</p>
+        <button onclick="closePopup9()">Închide</button>
+    </div>
+</div>
+<div id="popup10" class="popup10">
+    <div class="popup-content10">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95e34345a.png" alt="medicala" class="popup-image10">
+        <p>- Riscurile asigurate conform Condițiilor de asigurare benevolă a sănătății sunt considerate evenimentele survenite subit pe parcursul perioadei de asigurare (boala acută, acutizarea bolilor cronice, accident), care au afectat sănătatea persoanei asigurate și produc pierderi financiare în rezultatul tratamentului prescris de medicul curativ și care include:
+<br>
+            - Servicii medicale prestate în condiții de policlinica
+            <br>
+            - Servicii medicale prestate în condiții de spital
+            <br>
+            - Servicii medicale prestate in mod de urgenta.</p>
+        <button onclick="closePopup10('popup10')">Închide</button>
+    </div>
 </div>
 
+
+<div class="accidente">
+    <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95ee25d5f.png" alt="accidente"><br>
+    <span>Accidente</span>
+    <ul>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup11()">Obiectivul asigurarii</a>
+        </li>
+        <li>
+            <a href="javascript:void(0);" onclick="openPopup12('popup12')">Riscuri si obligatii</a>
+        </li>
+    </ul>
+    <button onclick="redirectToForm()">Calculează</button>
+</div>
+<div id="popup11" class="popup11">
+    <div class="popup-content11">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95ee25d5f.png" alt="accidente" class="popup-image11">
+        <p>Obiectul asigurării de accidente îl constituie interesul patrimonial ce vizează viaţa, sănătatea şi capacitatea de muncă a persoanei asigurate.
+<br>
+            Asigurătorul oferă protecţia de asigurare in cazul accidentelor suportate de asigurat (persoana asigurată) pe perioada asigurării, atât pe teritoriul Republicii Moldova, cât şi în afara lui, indiferent de criteriile de rasă, naţionalitate, origine etnică, limbă vorbită, sex, vîrstă, opinie, apartenenţă politică, avere sau origine socială, dacă contractul de asigurare nu prevede altfel.
+            <br>
+            Accidente sunt considerate cazuri asigurate dacă s-au produs în perioada de valabilitate a contractului de asigurare şi nu sunt exceptate prin prevederile acestuia, sunt confirmate prin documentele medicale eliberate de instituţiile medico-sanitare publice, 
+            în care asiguratul a primit primul ajutor medical şi s-a tratat ulterior, sau de certificatul medical de deces.</p>
+        <button onclick="closePopup11()">Închide</button>
+    </div>
+</div>
+<div id="popup12" class="popup12">
+    <div class="popup-content12">
+        <img src="https://asterra.md/uploads/calculator/thumbs/version_100/609f95ee25d5f.png" alt="accidente" class="popup-image12">
+        <p>- Riscurile cuprinse în asigurare sunt următoarele:
+<br>
+            - explozia, prăbuşirea de teren, lovirea, inclusiv înţeparea, tăierea şi altele asemenea, căderea, alunecarea, atacul din partea altei persoane sau a unui animal, trăsnetul, acţiunea curentului electric, arsura, dereglarea, înecul, asfixierea din cauze subite, cele produse ca urmare a circulaţiei mijloacelor de transport sau din cauza accidentelor produse acestora, precum şi cele provocate de fracţionarea ori folosirea maşinilor, aparatelor, instrumentelor, sculelor sau armelor;
+            <br>
+            - urmările imediate (deces sau invaliditate permanentă) ale efortului fizic excesiv şi subit determinat de cauze de forţă majoră în timpul producţiei;
+            <br>
+            - infecţia, în cazul în care substanţa infecţioasă a ajuns în corp datorită unui accident.</p>
+            <button onclick="closePopup12('popup12')">Închide</button>
+    </div>
+</div>
+
+
+
+</div>
 <script src="javascript.js"></script>
 </body>
 </html>

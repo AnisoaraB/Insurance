@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comandă și Achită Online</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+        .option {
+            display: inline-block;
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .option:hover {
+            background-color: #f0f0f0;
+        }
+        #amount {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .checkbox-group {
+            margin-top: 20px;
+            text-align: left;
+        }
+        .checkbox-group label {
+            display: block;
+            margin: 5px 0;
+            font-size: 18px;
+        }
+        .checkbox-group input:checked + span {
+            background-color: red;
+            color: white;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        .btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color:  #ec2233;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .btn:hover {
+            background-color:  #ec2233;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Calculeaza</h1>
+        <p>Selectează tipul asigurarii.:</p>
+
+        <div class="option" onclick="setAmount(100000)">
+            <p>Individual</p>
+           
+        </div>
+
+        <div class="option" onclick="setAmount(2000000)">
+            <p>Familial</p>
+            
+        </div>
+
+        <div id="amount">Sumă: 0</div>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="extra100" onclick="updateAmount()">Pentru persoanele cu vârsta mai mare 60 ani, tariful de asigurare se majorează cu 20%</label>
+            <label><input type="checkbox" id="extra200" onclick="updateAmount()"> Pentru persoanele care pleacă în străinătate, tariful de asigurare se majorează cu 20 %</label>
+            <label><input type="checkbox" id="extra300" onclick="updateAmount()"> Dacă asigurarea se perfectează pentru perioada aflării asiguratului la serviciu, tariful de asigurare se micșorează cu 20%</label>
+        </div>
+
+        <button class="btn" onclick="processOrder()">Comandă și Achită Online</button>
+    </div>
+
+    <script>
+        let baseAmount = 0;
+
+        function setAmount(amount) {
+            baseAmount = amount;
+            updateAmount();
+        }
+
+        function updateAmount() {
+            let totalAmount = baseAmount;
+
+            if (document.getElementById("extra100").checked) {
+                totalAmount += 100;
+            }
+            if (document.getElementById("extra200").checked) {
+                totalAmount += 200;
+            }
+            if (document.getElementById("extra300").checked) {
+                totalAmount += 300;
+            }
+
+            document.getElementById("amount").innerText = "Sumă: " + totalAmount;
+        }
+
+        function processOrder() {
+            alert("Comanda a fost plasată și achitarea a fost procesată!");
+        }
+    </script>
+    
+</body>
+</html>

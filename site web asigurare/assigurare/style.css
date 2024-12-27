@@ -41,7 +41,7 @@
     border-radius: 5px; /* Adaugă colțuri rotunjite */
     opacity: 0.9;
     display: inline-block;
-    float: none; /* Eliminăm float pentru o mai bună gestionare pe mobil */
+    float: right; /* Eliminăm float pentru o mai bună gestionare pe mobil */
     z-index: 9999;
 }
 
@@ -255,16 +255,17 @@ button:hover {
 }
 
 /* Stiluri generale pentru div-urile "medicala" și "accidente" */
-.medicala, .accidente,.rca,.carte-verde,.casco {
+.medicala, .accidente, .rca, .carte-verde, .casco, .bunuri, .locuinte {
   list-style-type: none;
   padding: 20px;
   overflow: hidden;
   display: block;
   text-align: center;
-  width: 15%;
+  width: 200px; /* Dimensiune fixă pentru lățime */
+  height: 200px; /* Dimensiune fixă pentru înălțime */
   border-radius: 5px;
   opacity: 0.8;
-  margin: auto; /* Centrare pe ecran */
+  margin: 20px auto; /* Centrare pe ecran și spațiere */
 }
 
 /* Culori pentru fiecare secțiune */
@@ -275,52 +276,60 @@ button:hover {
 .accidente {
   background-color: #eed64b;
 }
-.rca{
+.rca {
   background-color: rgb(196, 241, 192);
 }
-.carte-verde{
+.carte-verde {
   background-color: plum;
 }
-.casco{
+.casco {
   background-color: pink;
+}
+.bunuri {
+  background-color: rgb(134, 205, 238);
+}
+.locuinte{
+  background-color: rgb(174, 180, 164);
 }
 
 /* Text și stiluri generale */
-.medicala span, .accidente span, .rca span, .carte-verde span, .casco span {
+.medicala span, .accidente span, .rca span, .carte-verde span, .casco span, .bunuri ,.locuinte span {
   font-weight: bold;
-  margin-top: 20px;
   font-size: 23px;
-  float: left;
+  display: block;
+  margin-top: 10px;
 }
 
-.medicala ul, .accidente ul, .rca ul, .carte-verde ul, .casco ul {
-  float: right;
-  list-style-type: square;
-  font-size: 20px;
+.medicala ul, .accidente ul, .rca ul, .carte-verde ul, .casco ul, .bunuri ul ,.locuinte ul{
+  list-style-type: square; 
+  font-size: 15px;
+  padding: 20px;
+  margin-top: 10px;
+  text-align: left;
 }
 
 /* Stiluri responsive pentru ecrane mai mici */
 @media (max-width: 768px) {
-  .medicala, .accidente, .rca,.carte-verde,.casco {
+  .medicala, .accidente, .rca,.carte-verde,.casco,.bunuri,.locuinte {
     width: 90%; /* Ajustează lățimea pentru a ocupa mai mult spațiu pe ecran */
     padding: 15px; /* Reduce padding-ul */
   }
 
-  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span  {
+  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span ,.bunuri span,.locuinte span {
     font-size: 18px; /* Micșorează font-ul */
     float: none; /* Elimină flotarea pentru un layout mai simplu */
     display: block; /* Asigură afișarea verticală */
     text-align: center; /* Centrează textul */
   }
 
-  .medicala ul, .accidente ul,.rca ul, .carte-verde ul, .casco ul {
+  .medicala ul, .accidente ul,.rca ul, .carte-verde ul, .casco ul,.bunuri ul,.locuinte ul {
     float: none; /* Elimină flotarea */
     list-style-type: none; /* Ascunde punctele listei */
-    padding: 0; /* Elimină padding-ul */
+    padding: 10px; /* Elimină padding-ul */
     text-align: center; /* Centrează lista */
   }
 
-  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li {
+  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li,.bunuri ul li ,.locuinte ul li{
     margin: 5px 0; /* Adaugă spațiu între elementele listei */
     font-size: 16px; /* Reduce font-ul listei */
   }
@@ -328,15 +337,15 @@ button:hover {
 
 /* Stiluri responsive pentru ecrane foarte mici */
 @media (max-width: 480px) {
-  .medicala, .accidente,.rca,.carte-verde,.casco{
+  .medicala, .accidente,.rca,.carte-verde,.casco,.bunuri,.locuinte{
     padding: 10px;
   }
 
-  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span  {
+  .medicala span, .accidente span,.rca span, .carte-verde span, .casco span,.bunuri span ,.locuinte span {
     font-size: 16px;
   }
 
-  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li {
+  .medicala ul li, .accidente ul li,.rca ul li, .carte-verde ul li, .casco ul li,.bunuri ul li,.locuinte ul li {
     font-size: 14px;
   }
 }
@@ -564,6 +573,7 @@ button:hover {
 }
 .hidden-content3 {
   display: none; /* Ascunde secțiunea implicit */
+  
 }
 
 #about-content {
@@ -577,7 +587,27 @@ button:hover {
   margin-right: 20px;
   padding: 5px;
   transition: color 0.3s ease;
-size: 25px;
+  font-size: 20px;
+}
+#about-content a:hover {
+  color: #d30f40; /* Schimbă culoarea la hover */
+  
+}
+#istorie .title, #misiune .title {
+  display: block;
+  margin-top: 30px;
+  font-size: 24px; /* Dimensiune mai mare a titlului */
+  font-weight: bold; /* Face textul mai gros */
+  margin-bottom: 10px; /* Adaugă spațiu sub titlu */
+  color: #333; /* Culoare text (poate fi personalizată) */
+}
+
+/* Paragrafele din secțiune */
+#istorie p, #misiune p {
+  font-size: 20px; /* Dimensiune medie pentru text */
+  line-height: 1.6; /* Crește lizibilitatea */
+  color: #555; /* Culoare mai neutră pentru paragrafe */
+  margin-bottom: 15px; /* Spațiu între paragrafe */
 }
 
 

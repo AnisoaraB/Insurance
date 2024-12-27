@@ -11,11 +11,11 @@
             text-align: center;
         }
         .container {
-            max-width: 600px;
+            
             margin: 0 auto;
             padding: 20px;
-            border: 1px solid #ddd;
-            border-radius: 8px;
+            
+            text-align: left; /* Alinierea spre stânga */
         }
         .option {
             display: inline-block;
@@ -42,49 +42,52 @@
             margin: 5px 0;
             font-size: 18px;
         }
-        .checkbox-group input:checked + span {
-            background-color: red;
-            color: white;
-            padding: 5px;
-            border-radius: 4px;
-        }
         .btn {
             margin-top: 30px;
             padding: 10px 20px;
             font-size: 18px;
-            background-color:  #ec2233;
+            background-color: #ec2233;
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
         }
         .btn:hover {
-            background-color:  #ec2233;
+            background-color: #d11c2b;
         }
     </style>
 </head>
 <body>
 
+    <h1>Calculator Accidente</h1>
+
     <div class="container">
-        <h1>Calculeaza</h1>
-        <p>Selectează tipul asigurarii.:</p>
+        <h1>Calculează</h1>
+        <p>Selectează tipul asigurării:</p>
 
         <div class="option" onclick="setAmount(100000)">
             <p>Individual</p>
-           
         </div>
 
         <div class="option" onclick="setAmount(2000000)">
             <p>Familial</p>
-            
         </div>
 
         <div id="amount">Sumă: 0</div>
 
         <div class="checkbox-group">
-            <label><input type="checkbox" id="extra100" onclick="updateAmount()">Pentru persoanele cu vârsta mai mare 60 ani, tariful de asigurare se majorează cu 20%</label>
-            <label><input type="checkbox" id="extra200" onclick="updateAmount()"> Pentru persoanele care pleacă în străinătate, tariful de asigurare se majorează cu 20 %</label>
-            <label><input type="checkbox" id="extra300" onclick="updateAmount()"> Dacă asigurarea se perfectează pentru perioada aflării asiguratului la serviciu, tariful de asigurare se micșorează cu 20%</label>
+            <label>
+                <input type="radio" name="extraOption" id="extra100" onclick="updateAmount()"> 
+                Pentru persoanele cu vârsta mai mare de 60 ani, tariful de asigurare se majorează cu 20%
+            </label>
+            <label>
+                <input type="radio" name="extraOption" id="extra200" onclick="updateAmount()"> 
+                Pentru persoanele care pleacă în străinătate, tariful de asigurare se majorează cu 20%
+            </label>
+            <label>
+                <input type="radio" name="extraOption" id="extra300" onclick="updateAmount()"> 
+                Dacă asigurarea se perfectează pentru perioada aflării asiguratului la serviciu, tariful de asigurare se micșorează cu 20%
+            </label>
         </div>
 
         <button class="btn" onclick="processOrder()">Comandă și Achită Online</button>
